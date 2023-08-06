@@ -41,8 +41,17 @@
                   target="_blank"
                   >Detail</a
                 >
-                <button type="button">Edit</button>
-                <button type="button">Delete</button>
+                <form action="/edit-user/<%= dataUser[i].id %>" method="get">
+                  <button type="submit">Edit</button>
+                </form>
+                <form action="/delete-user" method="post">
+                  <input
+                    type="text"
+                    hidden
+                    value="<%= dataUser[i].id %>"
+                    name="userId" />
+                  <button type="submit">Delete</button>
+                </form>
               </td>
             </tr>
             <% } %>
